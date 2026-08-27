@@ -1,0 +1,11 @@
+com\fulfilment\application\monolith\location\LocationGatewayTest.class
+com\fulfilment\application\monolith\warehouses\domain\usecases\CreateWarehouseUseCaseTest$InMemoryWarehouseStore.class
+com\fulfilment\application\monolith\warehouses\domain\usecases\CreateWarehouseUseCaseTest.class
+com\fulfilment\application\monolith\stores\StoreEndpointTest.class
+com\fulfilment\application\monolith\products\ProductEndpointTest.class
+com\fulfilment\application\monolith\warehouses\domain\usecases\ArchiveWarehouseUseCaseTest.class
+com\fulfilment\application\monolith\warehouses\domain\usecases\ReplaceWarehouseUseCaseTest$InMemoryWarehouseStore.class
+com\fulfilment\application\monolith\warehouses\adapters\restapi\WarehouseEndpointIT.class
+com\fulfilment\application\monolith\warehouses\domain\usecases\ArchiveWarehouseUseCaseTest$InMemoryWarehouseStore.class
+com\fulfilment\application\monolith\warehouses\domain\usecases\ReplaceWarehouseUseCaseTest$StubLocationResolver.class
+com\fulfilment\application\monolith\warehouses\domain\usecases\ReplaceWarehouseUseCaseTest.class
