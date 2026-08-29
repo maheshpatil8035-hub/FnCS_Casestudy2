@@ -2,6 +2,7 @@ C:\projects\New folder (2)\FnCS_Casestudy2\target\generated-sources\jaxrs\com\wa
 C:\projects\New folder (2)\FnCS_Casestudy2\target\generated-sources\jaxrs\com\warehouse\api\beans\Warehouse.java
 C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\application\monolith\fulfillment\FulfillmentAssignmentRepository.java
 C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\application\monolith\stores\LegacyStoreManagerGateway.java
+C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\application\monolith\fulfillment\validator\FulfillmentAssignmentValidator.java
 C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\application\monolith\products\ProductResource.java
 C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\application\monolith\warehouses\domain\models\Warehouse.java
 C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\application\monolith\warehouses\domain\ports\ReplaceWarehouseOperation.java
@@ -23,5 +24,6 @@ C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\applicat
 C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\application\monolith\fulfillment\FulfillmentAssignment.java
 C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\application\monolith\products\ProductRepository.java
 C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\application\monolith\warehouses\adapters\database\WarehouseRepository.java
+C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\application\monolith\warehouses\domain\validation\WarehouseValidator.java
 C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\application\monolith\stores\StoreResource.java
 C:\projects\New folder (2)\FnCS_Casestudy2\src\main\java\com\fulfilment\application\monolith\warehouses\domain\ports\WarehouseStore.java

@@ -1,87 +1,102 @@
-# Java Code Assignment
+# Fulfilment Warehouse Assignment
 
-This is a short code assignment that explores various aspects of software development, including API implementation, documentation, persistence layer handling, and testing.
+This project is a Quarkus-based fulfilment and warehouse management application. It focuses on warehouse validation, inventory constraints, store fulfilment rules, and API-driven integration flows.
 
-## About the assignment
+## Overview
 
-You will find the tasks of this assignment on [CODE_ASSIGNMENT](CODE_ASSIGNMENT.md) file
+The application models the following domain capabilities:
 
-## About the code base
+- Warehouse lifecycle management: create, replace, archive
+- Location validation and capacity checks
+- Store and product fulfilment assignment rules
+- Legacy downstream sync after database commit
+- Automated verification with Maven and JaCoCo coverage gates
 
-This is based on https://github.com/quarkusio/quarkus-quickstarts
+## Project structure
 
-### Requirements
+- `src/main/java/com/fulfilment/application/monolith/warehouses` – warehouse domain, validation, and adapters
+- `src/main/java/com/fulfilment/application/monolith/stores` – store endpoints and legacy gateway integration
+- `src/main/java/com/fulfilment/application/monolith/products` – product REST endpoints
+- `src/main/java/com/fulfilment/application/monolith/fulfillment` – fulfilment assignment logic and validation
+- `src/main/resources` – Quarkus application config and OpenAPI spec
+- `src/test/java` – unit and endpoint tests
 
-To compile and run this demo you will need:
+## Prerequisites
 
 - JDK 17+
+- Maven or the included Maven wrapper
 
-In addition, you will need either a PostgreSQL database, or Docker to run one.
+## Quick start
 
-### Configuring JDK 17+
-
-Make sure that `JAVA_HOME` environment variables has been set, and that a JDK 17+ `java` command is on the path.
-
-## Building the demo
-
-Execute the Maven build on the root of the project:
-
-```sh
-./mvnw package
+```bash
+./mvnw clean install
 ```
 
-## Running the demo
+To run the application in dev mode:
 
-### Live coding with Quarkus
-
-The Maven Quarkus plugin provides a development mode that supports
-live coding. To try this out:
-
-```sh
+```bash
 ./mvnw quarkus:dev
 ```
 
-In this mode you can make changes to the code and have the changes immediately applied, by just refreshing your browser.
+Then open:
 
-    Hot reload works even when modifying your JPA entities.
-    Try it! Even the database schema will be updated on the fly.
+- http://localhost:8081
+- or the relevant endpoint path for the APIs used in the exercise
 
-## (Optional) Run Quarkus in JVM mode
+## Validation and business rules
 
-When you're done iterating in developer mode, you can run the application as a conventional jar file.
+The application validates:
 
-First compile it:
+- unique business unit codes
+- valid warehouse locations
+- maximum warehouse count per location
+- capacity constraints per location
+- replacement stock/capacity matching
+- fulfilment limits per store and product
 
-```sh
-./mvnw package
-```
+The validation logic has been split out into dedicated validator components so that business-rule checks stay separate from the persistence and API layers.
 
-Next we need to make sure you have a PostgreSQL instance running (Quarkus automatically starts one for dev and test mode). To set up a PostgreSQL database with Docker:
+## Screenshots
 
-```sh
-docker run -it --rm=true --name quarkus_test -e POSTGRES_USER=quarkus_test -e POSTGRES_PASSWORD=quarkus_test -e POSTGRES_DB=quarkus_test -p 15432:5432 postgres:13.3
-```
+### Warehouse dashboard
 
-Connection properties for the Agroal datasource are defined in the standard Quarkus configuration file,
-`src/main/resources/application.properties`.
+![Warehouse dashboard](docs/images/warehouse-dashboard.svg)
 
-Then run it:
+### Fulfilment map
 
-```sh
-java -jar ./target/quarkus-app/quarkus-run.jar
-```
-    Have a look at how fast it boots.
-    Or measure total native memory consumption...
+![Fulfilment map](docs/images/fulfilment-map.svg)
 
+### Coverage dashboard
 
-## See the demo in your browser
+![Coverage dashboard](docs/images/coverage-dashboard.svg)
 
-Navigate to:
+## Coverage report
 
-<http://localhost:8080/index.html>
+Coverage is generated during the Verify phase and published to:
 
-Have fun, and join the team of contributors!
+- `target/site/jacoco/index.html`
+
+The build enforces a minimum line coverage threshold of 80%.
+
+## CI pipeline
+
+A GitHub Actions workflow is configured at:
+
+- `.github/workflows/ci.yml`
+
+It runs the following on push and pull requests:
+
+- Java 17 setup
+- Maven dependency cache
+- `./mvnw clean verify`
+
+## Assignment notes
+
+Details for the domain tasks are documented in:
+
+- [CODE_ASSIGNMENT.md](CODE_ASSIGNMENT.md)
+- [QUESTIONS.md](QUESTIONS.md)
 
 ## Troubleshooting
 
-Using **IntelliJ**, in case the generated code is not recognized and you have compilation failures, you may need to add `target/.../jaxrs` folder as "generated sources".
+If an IDE does not recognize generated sources, mark the generated output directory as a source root or rebuild the Maven project.

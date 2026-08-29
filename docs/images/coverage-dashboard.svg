@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#f8fafc"/>
+  <circle cx="600" cy="350" r="180" fill="#e2e8f0"/>
+  <circle cx="600" cy="350" r="180" fill="none" stroke="#0ea5e9" stroke-width="30" stroke-dasharray="880 180" transform="rotate(-90 600 350)"/>
+  <text x="600" y="330" text-anchor="middle" font-family="Segoe UI, Arial" font-size="76" font-weight="700" fill="#0f172a">86%</text>
+  <text x="600" y="390" text-anchor="middle" font-family="Segoe UI, Arial" font-size="26" fill="#334155">Code coverage</text>
+  <text x="600" y="560" text-anchor="middle" font-family="Segoe UI, Arial" font-size="20" fill="#475569">Target threshold: 80%</text>
+</svg>

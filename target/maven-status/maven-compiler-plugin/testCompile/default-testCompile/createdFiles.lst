@@ -3,6 +3,7 @@ com\fulfilment\application\monolith\warehouses\domain\usecases\CreateWarehouseUs
 com\fulfilment\application\monolith\warehouses\domain\usecases\CreateWarehouseUseCaseTest.class
 com\fulfilment\application\monolith\stores\StoreEndpointTest.class
 com\fulfilment\application\monolith\products\ProductEndpointTest.class
+com\fulfilment\application\monolith\fulfillment\FulfillmentAssignmentServiceTest.class
 com\fulfilment\application\monolith\warehouses\domain\usecases\ArchiveWarehouseUseCaseTest.class
 com\fulfilment\application\monolith\warehouses\domain\usecases\ReplaceWarehouseUseCaseTest$InMemoryWarehouseStore.class
 com\fulfilment\application\monolith\warehouses\adapters\restapi\WarehouseEndpointIT.class

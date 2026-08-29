@@ -18,12 +18,14 @@ com\fulfilment\application\monolith\warehouses\domain\usecases\CreateWarehouseUs
 com\fulfilment\application\monolith\stores\StoreResource.class
 com\fulfilment\application\monolith\products\Product.class
 com\fulfilment\application\monolith\stores\StoreResource$2.class
+com\fulfilment\application\monolith\warehouses\domain\validation\WarehouseValidator.class
 com\fulfilment\application\monolith\products\ProductRepository.class
 com\fulfilment\application\monolith\warehouses\domain\ports\CreateWarehouseOperation.class
 com\fulfilment\application\monolith\stores\LegacyStoreManagerGateway.class
 com\fulfilment\application\monolith\fulfillment\FulfillmentAssignmentRepository.class
 com\fulfilment\application\monolith\stores\StoreResource$ErrorMapper.class
 com\warehouse\api\beans\Warehouse.class
+com\fulfilment\application\monolith\fulfillment\validator\FulfillmentAssignmentValidator.class
 com\fulfilment\application\monolith\products\ProductResource.class
 com\fulfilment\application\monolith\warehouses\domain\ports\WarehouseStore.class
 com\fulfilment\application\monolith\location\LocationGateway.class

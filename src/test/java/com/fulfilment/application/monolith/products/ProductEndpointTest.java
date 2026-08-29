@@ -5,10 +5,30 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.core.IsNot.not;
 
 import io.quarkus.test.junit.QuarkusTest;
+import jakarta.transaction.Transactional;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @QuarkusTest
 public class ProductEndpointTest {
+
+  @BeforeEach
+  @Transactional
+  void setUpProducts() {
+    Product.deleteAll();
+
+    Product tonstad = new Product("TONSTAD");
+    tonstad.stock = 10;
+    tonstad.persist();
+
+    Product kallax = new Product("KALLAX");
+    kallax.stock = 5;
+    kallax.persist();
+
+    Product besta = new Product("BESTÅ");
+    besta.stock = 3;
+    besta.persist();
+  }
 
   @Test
   public void testCrudProduct() {
@@ -22,8 +42,11 @@ public class ProductEndpointTest {
         .statusCode(200)
         .body(containsString("TONSTAD"), containsString("KALLAX"), containsString("BESTÅ"));
 
+    Product tonstad = Product.find("name", "TONSTAD").firstResult();
+    Long tonstadId = tonstad.id;
+
     // Delete the TONSTAD:
-    given().when().delete(path + "/1").then().statusCode(204);
+    given().when().delete(path + "/" + tonstadId).then().statusCode(204);
 
     // List all, TONSTAD should be missing now:
     given()
